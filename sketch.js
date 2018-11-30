@@ -1,19 +1,22 @@
-// Daniel Shiffman
-// https://www.kadenze.com/courses/the-nature-of-code
-// http://natureofcode.com/
-// Session 2: Array of Particles, multiple forces
-
-var person;
+var man;
 
 function setup() {
   createCanvas(640, 360);
-	person = new person();
+	man = new Person();
 }
-
-
-
+var x;
 function draw() {
   background(51);
-	person.update;
-	person.display;
+	if(mouseIsPressed){
+	var force = createVector(1, 0)
+	man.applyForce(force);
+	}
+	
+	translate(-man.pos.x, 0);
+	man.update();
+	man.display();
+
+	fill(10);
+rect(250, 315, 65, 50);
+
 }
